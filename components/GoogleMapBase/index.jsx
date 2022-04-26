@@ -77,8 +77,11 @@ const GoogleMapBase = ({ className }) => {
                   center={location}
                   zoom={16}
                   options={{
+                    mapId: '81c38db78d06a3db',
                     zoomControl: true,
-                    gestureHandling: 'greedy'
+                    gestureHandling: 'greedy',
+                    clickableIcons: false,
+                    disableDefaultUI: true
                   }}
               >
                 <Marker
@@ -89,9 +92,9 @@ const GoogleMapBase = ({ className }) => {
                 />
               </GoogleMap>
           }
-          <button className={'bg-indigo-300 bg-opacity-70 absolute p-2 rounded bottom-1 left-20 text-sm'} onClick={getCurrentLocation}>Get Location</button>
+          <button className={'bg-indigo-300 hover:bg-indigo-400 bg-opacity-80 absolute p-2 rounded top-0  text-sm'} onClick={getCurrentLocation}>Get Location</button>
         </div>
-        <h1 className={''}>{location.lng.toFixed(3)}, {location.lat.toFixed(3)}</h1>
+        <h1 className={'md:ml-4 mt-4 md:md-0'}>{location.lng.toFixed(3)}, {location.lat.toFixed(3)}</h1>
       </>
 
   )
