@@ -3,12 +3,18 @@ import React from 'react'
 import { WalletContext } from '../../hooks/useWallet'
 
 const ConnectWallet = () => {
-  const { connectWallet } = React.useContext(WalletContext)
+  const { wallet, connectWallet } = React.useContext(WalletContext)
 
   return (
-      <button className={'uppercase'} onClick={connectWallet}>
-        connect
-      </button>
+      <>
+        {
+          wallet.address
+            ? <p>hi</p>
+            : <button className={'uppercase'} onClick={connectWallet}>
+                connect
+              </button>
+        }
+      </>
   )
 }
 

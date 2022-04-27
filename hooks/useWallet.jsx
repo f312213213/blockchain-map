@@ -15,7 +15,7 @@ export const WalletContextProvider = ({ children }) => {
   const connectWallet = async () => {
     const providerOptions = {
       walletconnect: {
-        package: WalletConnectProvider, // required
+        package: WalletConnectProvider,
         options: {
           infuraId: process.env.NEXT_PUBLIC_INFURA_ID
         }
@@ -37,19 +37,23 @@ export const WalletContextProvider = ({ children }) => {
       theme: 'dark',
       cacheProvider: false
     })
-    const instance = await web3Modal.connect()
-    const provider = new ethers.providers.Web3Provider(instance)
-    const signer = provider.getSigner()
-    signer.getAddress()
-      .then((result) => {
-        setWallet({
-          ...wallet,
-          address: result
-        })
-        openSnackbar('success', '連結成功！')
+    web3Modal.connect()
+      .then((instance) => {
+        const provider = new ethers.providers.Web3Provider(instance)
+        const signer = provider.getSigner()
+        signer.getAddress()
+          .then((result) => {
+            setWallet({
+              ...wallet,
+              address: result
+            })
+            openSnackbar('success', '連結成功！')
+          })
+          .catch((e) => {
+            openSnackbar('error', '連結失敗！')
+          })
       })
-      .catch((e) => {
-        console.log('you must connect with wallet!')
+      .catch(() => {
         openSnackbar('error', '連結失敗！')
       })
   }

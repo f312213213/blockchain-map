@@ -2,6 +2,7 @@ import React from 'react'
 import { GoogleMap, Marker, useJsApiLoader, GoogleMarkerClusterer } from '@react-google-maps/api'
 import { position } from 'tailwindcss/lib/util/dataTypes'
 import { BackdropContext } from '../../hooks/useBackdrop'
+import { SnackbarContext } from '../../hooks/useSnackbar'
 
 const containerStyle = {
   width: '100%',
@@ -19,6 +20,7 @@ const GoogleMapBase = ({ className }) => {
     lng: 121.370734
   })
   const { openBackdrop, closeBackdrop } = React.useContext(BackdropContext)
+  const { openSnackbar, closeSnackbar } = React.useContext(SnackbarContext)
   const markerRef = React.useRef({
     current: {
       marker: null
@@ -48,8 +50,12 @@ const GoogleMapBase = ({ className }) => {
             lng: position.coords.longitude
           })
           closeBackdrop()
+          openSnackbar('success', '取得位置成功！')
         }
       )
+    } else {
+      closeBackdrop()
+      openSnackbar('error', '取得位置失敗！')
     }
   }
 
