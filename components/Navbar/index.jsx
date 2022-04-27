@@ -1,6 +1,7 @@
 import React from 'react'
 
 import NavItem from './NavItem'
+import ConnectWallet from '../ConnectWallet'
 
 const index = () => {
   return (
@@ -8,7 +9,7 @@ const index = () => {
         <NavItem text={'map'} path={'/'} />
         <NavItem text={'read'} path={'/read'} />
         <NavItem text={'post'} path={'/post'} />
-        <NavItem text={'connect'} path={'/connect'} />
+        <ConnectWallet />
       </nav>
   )
 }
