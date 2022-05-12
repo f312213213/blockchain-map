@@ -28,7 +28,7 @@ const Post = () => {
             <input
                 ref={nameRef}
                 type="text"
-                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
+                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-2 mx-4 focus:ring-2 focus:border-none ring-blue-500"
                 name="name"
                 placeholder={'David'}
                 required
@@ -40,7 +40,7 @@ const Post = () => {
             <input
                 ref={emailRef}
                 type="email"
-                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
+                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-2 mx-4 focus:ring-2 focus:border-none ring-blue-500"
                 name="email"
                 placeholder={'hi@example.com'}
                 required
@@ -55,7 +55,7 @@ const Post = () => {
             <textarea
                 ref={messageRef}
                 rows={5}
-                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500 resize-none"
+                className="font-light rounded-md border focus:outline-none py-2 mt-2 px-2 mx-4 focus:ring-2 focus:border-none ring-blue-500 resize-none"
                 name={'message'}
                 placeholder={'Type in some message!'}
                 required
