@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
+import { ThemeProvider } from 'next-themes'
 
 import '../styles/globals.css'
 import '../styles/nprogress.css'
@@ -12,6 +13,7 @@ import Footer from '../components/Footer'
 import RootContext from '../hooks/rootContext'
 import Backdrop from '../components/Backdrop'
 import Snackbar from '../components/Snackbar'
+import ToggleDarkMode from '../components/ToggleDarkMode'
 
 function App ({ Component, pageProps }) {
   const router = useRouter()
@@ -21,16 +23,19 @@ function App ({ Component, pageProps }) {
     router.events.on('routeChangeError', () => NProgress.done())
   }, [router])
   return (
-      <RootContext>
-        <Backdrop />
-        <Meta />
-        <Navbar />
-        <Snackbar />
-        <Page>
-          <Component {...pageProps} />
-        </Page>
-        <Footer />
-      </RootContext>
+      <ThemeProvider enableSystem={true} attribute={'class'}>
+        <RootContext>
+          <Backdrop />
+          <Meta />
+          <Navbar />
+          <Snackbar />
+          <Page>
+            <Component {...pageProps} />
+          </Page>
+          <Footer />
+          <ToggleDarkMode />
+        </RootContext>
+      </ThemeProvider>
   )
 }
 

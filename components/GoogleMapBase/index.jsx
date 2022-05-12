@@ -1,8 +1,8 @@
 import React from 'react'
 import { GoogleMap, Marker, useJsApiLoader, GoogleMarkerClusterer } from '@react-google-maps/api'
-import { position } from 'tailwindcss/lib/util/dataTypes'
 import { BackdropContext } from '../../hooks/useBackdrop'
 import { SnackbarContext } from '../../hooks/useSnackbar'
+import { LocationContext } from '../../hooks/useLocation'
 
 const containerStyle = {
   width: '100%',
@@ -21,6 +21,7 @@ const GoogleMapBase = ({ className }) => {
   })
   const { openBackdrop, closeBackdrop } = React.useContext(BackdropContext)
   const { openSnackbar, closeSnackbar } = React.useContext(SnackbarContext)
+  const { position, editLocation } = React.useContext(LocationContext)
   const markerRef = React.useRef({
     current: {
       marker: null
@@ -38,6 +39,7 @@ const GoogleMapBase = ({ className }) => {
       lat: markerRef.current.marker.position.lat(),
       lng: markerRef.current.marker.position.lng()
     })
+    editLocation(markerRef.current.marker.position.lat(), markerRef.current.marker.position.lng())
   }
 
   const getCurrentLocation = () => {
@@ -49,6 +51,7 @@ const GoogleMapBase = ({ className }) => {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           })
+          editLocation(position.coords.latitude, position.coords.longitude)
           closeBackdrop()
           openSnackbar('success', '取得位置成功！')
         }
@@ -60,7 +63,7 @@ const GoogleMapBase = ({ className }) => {
   }
 
   React.useEffect(() => {
-    getCurrentLocation()
+    // if (!position) getCurrentLocation()
   }, [])
 
   return (

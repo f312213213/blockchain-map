@@ -5,7 +5,7 @@ import ConnectWallet from '../ConnectWallet'
 
 const index = () => {
   return (
-      <nav className={'w-full p-4 bg-blue-300 fixed flex justify-around'}>
+      <nav className={'w-full p-4 bg-gray-300 dark:bg-gray-700 fixed flex justify-around'}>
         <NavItem text={'map'} path={'/'} />
         <NavItem text={'read'} path={'/read'} />
         <NavItem text={'post'} path={'/post'} />
