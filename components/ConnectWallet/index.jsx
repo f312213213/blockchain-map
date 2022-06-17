@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { WalletContext } from '../../hooks/useWallet'
+import { WalletContext } from '../../context/useWallet'
 
 const ConnectWallet = () => {
   const { wallet, connectWallet } = React.useContext(WalletContext)

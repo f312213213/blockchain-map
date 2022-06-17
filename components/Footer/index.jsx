@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
-      <footer className={'w-full p-2 bg-gray-300 dark:bg-gray-700 flex justify-center items-center'}>
-        HI
-      </footer>
-  )
-}
+    <footer
+      className={
+        "flex w-full items-center justify-center bg-gray-300 p-2 dark:bg-gray-700"
+      }
+    >
+      HI
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

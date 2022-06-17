@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Page = ({ children }) => {
-  return (
-      <main className={'w-full min-h-screen'}>
-        {children}
-      </main>
-  )
-}
+  return <main className={"min-h-screen w-full"}>{children}</main>;
+};
 
-export default Page
+export default Page;

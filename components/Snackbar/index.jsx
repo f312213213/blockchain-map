@@ -1,5 +1,5 @@
 import React from 'react'
-import { SnackbarContext } from '../../hooks/useSnackbar'
+import { SnackbarContext } from '../../context/useSnackbar'
 import SnackbarBase from './SnackbarBase'
 
 const Snackbar = () => {

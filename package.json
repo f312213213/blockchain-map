@@ -11,9 +11,11 @@
   "dependencies": {
     "@coinbase/wallet-sdk": "^3.0.8",
     "@next/env": "^12.1.5",
+    "@radix-ui/react-dialog": "^0.1.7",
     "@react-google-maps/api": "^2.10.0",
     "@walletconnect/web3-provider": "^1.7.8",
     "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "ethers": "^5.6.4",
     "next": "12.1.5",
     "next-themes": "^0.2.0",
@@ -33,6 +35,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
     "postcss": "^8.4.12",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
     "tailwindcss": "^3.0.24"
   }
 }

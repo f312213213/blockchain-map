@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa'
-import { SnackbarContext } from '../../hooks/useSnackbar'
+import { SnackbarContext } from '../../context/useSnackbar'
 
 const SnackbarBase = ({ text, type }) => {
   const { closeSnackbar } = React.useContext(SnackbarContext)

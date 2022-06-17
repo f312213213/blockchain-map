@@ -1,17 +1,21 @@
-import React from 'react'
+import React from "react";
 
-import NavItem from './NavItem'
-import ConnectWallet from '../ConnectWallet'
+import NavItem from "./NavItem";
+import ConnectWallet from "../ConnectWallet";
 
 const index = () => {
   return (
-      <nav className={'w-full p-4 bg-gray-300 dark:bg-gray-700 fixed flex justify-around'}>
-        <NavItem text={'map'} path={'/'} />
-        <NavItem text={'read'} path={'/read'} />
-        <NavItem text={'post'} path={'/post'} />
-        <ConnectWallet />
-      </nav>
-  )
-}
+    <nav
+      className={
+        "fixed flex w-full justify-around bg-gray-300 p-4 dark:bg-gray-700"
+      }
+    >
+      <NavItem text={"map"} path={"/"} />
+      <NavItem text={"read"} path={"/read"} />
+      <NavItem text={"post"} path={"/post"} />
+      {/* <ConnectWallet /> */}
+    </nav>
+  );
+};
 
-export default index
+export default index;
