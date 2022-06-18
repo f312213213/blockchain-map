@@ -60,10 +60,10 @@ const Post = () => {
           </label>
           <input
             ref={mobileRef}
-            type="text"
+            type={"tel"}
             className="mx-4 mt-2 rounded-md border py-2 px-2 font-light ring-blue-500 focus:border-none focus:outline-none focus:ring-2"
-            name="name"
-            placeholder={"David"}
+            name="mobile"
+            placeholder={"+886123456789"}
             required
             disabled={sending}
           />
@@ -93,7 +93,7 @@ const Post = () => {
             rows={5}
             className="mx-4 mt-2 resize-none rounded-md border py-2 px-2 font-light ring-blue-500 focus:border-none focus:outline-none focus:ring-2"
             name={"message"}
-            placeholder={"Type in some message!"}
+            placeholder={"Type in some message! e.g. I need some water!"}
             required
             disabled={sending}
           />

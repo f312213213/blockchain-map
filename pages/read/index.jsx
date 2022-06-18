@@ -67,7 +67,11 @@ const Read = () => {
             </thead>
             <tbody className="divide-y divide-gray-200  dark:divide-gray-700 ">
               {needList.map((need) => (
-                <TableRow key={need.id} need={need} />
+                <TableRow
+                  key={need.id}
+                  need={need}
+                  getNeedRecord={getNeedRecord}
+                />
               ))}
             </tbody>
           </table>
